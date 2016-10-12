@@ -1,0 +1,27 @@
+@model DapperApp.Models.User
+
+<html>
+<head>
+    <title>All Quotes</title>
+    <link rel="stylesheet" href="~css/site.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" >
+</head>
+<body>
+    <div class="container">
+
+        <h2>Welcome to Quoting Dojo</h2>
+        <!--@Html.AntiForgeryToken()-->
+        <form action="/new" method="post">
+            @Html.AntiForgeryToken()
+            @Html.LabelFor(m => m.first_name)
+            @Html.TextBoxFor(m => m.first_name)
+            @Html.ValidationMessageFor(m => m.first_name)
+            @Html.LabelFor(m => m.quote)
+            @Html.TextBoxFor(m => m.quote)
+            @Html.ValidationMessageFor(m => m.quote)
+            <input type="submit" value="Add new user">
+        </form>
+
+   </div>
+</body>
+</html>
